@@ -1,0 +1,24 @@
+<div class="row mt-4">
+    <div class="col-md-6">
+        <form id="confirm-form" action="{{route('user.trade.request.paid')}}" method="post">
+            @csrf
+            
+            <input type="hidden" name="id" value="{{$tradeRequestsDetails->id}}">
+                            
+            <input type="hidden" name="id" value="{{$tradeRequestsDetails->id}}">
+                        
+             
+        
+            <button id="confirm-button" type="submit"  function="clicked()" class="cmn-btn bg--success w-100">@lang('I Have Paid') <i class="las la-check"></i>
+            </button>
+              
+        </form>
+<script>
+  var confirmForm = document.getElementById('confirm-form');
+  console.log(document.getElementById('confirm-button'))
+    console.log(confirmForm)
+    confirmForm.addEventListener('submit', function() {
+        document.getElementById('confirm-button').disabled = true;
+        
+    })
+</script>
